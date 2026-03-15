@@ -78,7 +78,7 @@ ${sectionInstruction}
 `;
 
     const response = await client.responses.create({
-      model: "gpt-5.4",
+      model: "gpt-5-mini",
       input: prompt,
     });
 
