@@ -237,20 +237,79 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-12">
       <header className="bg-white border-b border-slate-200 sticky top-0 z-10 shadow-sm">
-        <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="max-w-4xl mx-auto px-4 min-h-16 py-3 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <div className="bg-orange-100 p-2 rounded-lg text-orange-600">
               <IconSparkles />
             </div>
             <h1 className="text-xl font-bold">保育AIノート</h1>
           </div>
-          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-full">
-            Smart Recording
+
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-end">
+            <a
+              href="https://x.com/あなたのアカウント"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-bold text-slate-500 hover:text-orange-600 transition-colors"
+            >
+              X
+            </a>
+            <a
+              href="https://www.instagram.com/あなたのアカウント"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-bold text-slate-500 hover:text-orange-600 transition-colors"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://note.com/あなたのアカウント"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-bold text-slate-500 hover:text-orange-600 transition-colors"
+            >
+              note
+            </a>
+            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-full">
+              Smart Recording
+            </div>
           </div>
         </div>
       </header>
 
       <main className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+        <section className="bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-100 rounded-3xl p-5 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div>
+              <h2 className="text-lg font-bold text-slate-800">
+                保育AIノートの最新情報を発信中
+              </h2>
+              <p className="text-sm text-slate-600 mt-1">
+                使い方や更新情報、活用のヒントは公式SNSでチェックできます。
+              </p>
+            </div>
+
+            <div className="flex gap-2 flex-wrap">
+              <a
+                href="https://x.com/あなたのアカウント"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-xl bg-slate-900 text-white text-sm font-bold hover:bg-slate-800 transition"
+              >
+                Xを見る
+              </a>
+              <a
+                href="https://www.instagram.com/あなたのアカウント"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-xl border border-slate-200 bg-white text-sm font-bold text-slate-700 hover:bg-slate-50 transition"
+              >
+                Instagramを見る
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
           <div className="p-5 border-b border-slate-100 bg-slate-50/50 flex items-center gap-2">
             <span className="text-slate-500">
@@ -387,6 +446,62 @@ export default function App() {
                 </div>
               )}
             </div>
+          </div>
+        </section>
+
+        <section className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+          <div className="p-5 border-b border-slate-100 bg-slate-50/50 flex items-center gap-2">
+            <span className="text-slate-500">📱</span>
+            <h2 className="font-bold text-slate-700">公式SNS</h2>
+          </div>
+
+          <div className="p-6 space-y-4">
+            <p className="text-sm leading-relaxed text-slate-600">
+              保育AIノートの更新情報や使い方、活用例などをSNSで発信しています。
+              新機能のお知らせや、保育書類作成のヒントも順次投稿していきます。
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <a
+                href="https://x.com/あなたのアカウント"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-2xl border border-slate-200 p-4 hover:border-orange-200 hover:bg-orange-50 transition"
+              >
+                <div className="text-lg font-bold text-slate-700">X</div>
+                <p className="mt-1 text-sm text-slate-500">
+                  更新情報や気づき、活用例を気軽に発信
+                </p>
+              </a>
+
+              <a
+                href="https://www.instagram.com/あなたのアカウント"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-2xl border border-slate-200 p-4 hover:border-orange-200 hover:bg-orange-50 transition"
+              >
+                <div className="text-lg font-bold text-slate-700">Instagram</div>
+                <p className="mt-1 text-sm text-slate-500">
+                  サービス紹介や使い方を画像でわかりやすく紹介
+                </p>
+              </a>
+
+              <a
+                href="https://note.com/あなたのアカウント"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-2xl border border-slate-200 p-4 hover:border-orange-200 hover:bg-orange-50 transition"
+              >
+                <div className="text-lg font-bold text-slate-700">note</div>
+                <p className="mt-1 text-sm text-slate-500">
+                  作った理由や活用のコツを詳しく発信
+                </p>
+              </a>
+            </div>
+
+            <p className="text-xs text-slate-400">
+              最新情報は各SNSで発信中です。ぜひフォローしてください。
+            </p>
           </div>
         </section>
       </main>
