@@ -244,9 +244,6 @@ export default function App() {
             </div>
             <h1 className="text-xl font-bold">保育AIノート</h1>
           </div>
-          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-slate-100 px-3 py-1 rounded-full">
-            Smart Recording
-          </div>
         </div>
       </header>
 
