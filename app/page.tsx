@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import SiteHeader from "../components/SiteHeader";
-import SiteFooter from "../components/SiteFooter";
+import SiteHeader from "./components/SiteHeader";
+import SiteFooter from "./components/SiteFooter";
 
 const IconBaby = () => (
   <svg
