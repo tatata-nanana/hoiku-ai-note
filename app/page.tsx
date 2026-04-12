@@ -361,55 +361,46 @@ export default function App() {
         </section>
 
         <section className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-          <div className="p-5 border-b border-slate-100 bg-slate-50/50 flex items-center gap-2">
-            <span className="text-slate-500">📱</span>
-            <h2 className="font-bold text-slate-700">公式SNS</h2>
+          <div className="px-6 pt-6 pb-4">
+            <h2 className="text-lg font-bold text-slate-800">SNS</h2>
+            <p className="mt-2 text-sm text-slate-500 leading-relaxed">
+              更新情報や使い方、活用のヒントを発信しています。
+            </p>
           </div>
 
-          <div className="p-6 space-y-4">
-            <p className="text-sm leading-relaxed text-slate-600">
-              保育AIノートの更新情報や使い方、活用例などをSNSで発信しています。
-              新機能のお知らせや、保育書類作成のヒントも順次投稿していきます。
-            </p>
+          <div className="px-6">
+            <div className="border-t border-slate-200" />
+          </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="px-6 py-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
               <a
                 href="https://x.com/hoiku_ai_note"
                 rel="noopener noreferrer"
-                className="block rounded-2xl border border-slate-200 p-4 hover:border-orange-200 hover:bg-orange-50 transition"
+                className="flex items-center justify-between py-4 border-b border-slate-200 text-slate-700 hover:text-orange-600 transition"
               >
-                <div className="text-lg font-bold text-slate-700">X</div>
-                <p className="mt-1 text-sm text-slate-500">
-                  更新情報や気づき、活用例を気軽に発信
-                </p>
+                <span className="font-medium">X</span>
+                <span className="text-slate-400">→</span>
               </a>
 
               <a
                 href="https://www.instagram.com/hoiku_ai_note"
                 rel="noopener noreferrer"
-                className="block rounded-2xl border border-slate-200 p-4 hover:border-orange-200 hover:bg-orange-50 transition"
+                className="flex items-center justify-between py-4 border-b sm:border-l sm:pl-6 border-slate-200 text-slate-700 hover:text-orange-600 transition"
               >
-                <div className="text-lg font-bold text-slate-700">Instagram</div>
-                <p className="mt-1 text-sm text-slate-500">
-                  サービス紹介や使い方を画像でわかりやすく紹介
-                </p>
+                <span className="font-medium">Instagram</span>
+                <span className="text-slate-400">→</span>
               </a>
 
               <a
                 href="https://note.com/hoiku_ai_note"
                 rel="noopener noreferrer"
-                className="block rounded-2xl border border-slate-200 p-4 hover:border-orange-200 hover:bg-orange-50 transition"
+                className="flex items-center justify-between py-4 border-b sm:border-l sm:pl-6 border-slate-200 text-slate-700 hover:text-orange-600 transition"
               >
-                <div className="text-lg font-bold text-slate-700">note</div>
-                <p className="mt-1 text-sm text-slate-500">
-                  作った理由や活用のコツを詳しく発信
-                </p>
+                <span className="font-medium">note</span>
+                <span className="text-slate-400">→</span>
               </a>
             </div>
-
-            <p className="text-xs text-slate-400">
-              最新情報は各SNSで発信中です。ぜひフォローしてください。
-            </p>
           </div>
         </section>
       </main>
