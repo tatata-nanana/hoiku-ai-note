@@ -1,28 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import type { Metadata } from "next";
 import React, { useEffect, useRef, useState } from "react";
 
-const metadataValue: Metadata = {
-  title: "お問い合わせ | 保育AIノート",
-  description: "保育AIノートへのお問い合わせページです。",
-};
-
-export const metadata = metadataValue;
-
 const IconSparkles = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
     <path d="M5 3v4" />
     <path d="M19 17v4" />
@@ -32,17 +14,7 @@ const IconSparkles = () => (
 );
 
 const IconMenu = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <line x1="3" x2="21" y1="6" y2="6" />
     <line x1="3" x2="21" y1="12" y2="12" />
     <line x1="3" x2="21" y1="18" y2="18" />
@@ -89,7 +61,6 @@ export default function ContactPage() {
               onClick={() => setMenuOpen((prev) => !prev)}
               className="flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 hover:border-orange-200 hover:text-orange-600 transition"
               aria-label="メニューを開く"
-              aria-expanded={menuOpen}
             >
               <IconMenu />
             </button>
@@ -137,10 +108,6 @@ export default function ContactPage() {
             >
               メールでお問い合わせする
             </a>
-
-            <p className="text-xs text-slate-400">
-              メールアプリが起動しない場合は、hoikuainote@gmail.com 宛に直接ご連絡ください。
-            </p>
           </div>
         </div>
       </main>
@@ -156,34 +123,10 @@ export default function ContactPage() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <a
-                href="https://x.com/hoiku_ai_note"
-                rel="noopener noreferrer"
-                className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:border-orange-200 hover:text-orange-600 transition"
-              >
-                X
-              </a>
-
-              <a
-                href="https://www.instagram.com/hoiku_ai_note"
-                rel="noopener noreferrer"
-                className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:border-orange-200 hover:text-orange-600 transition"
-              >
-                Instagram
-              </a>
-
-              <a
-                href="https://note.com/hoiku_ai_note"
-                rel="noopener noreferrer"
-                className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:border-orange-200 hover:text-orange-600 transition"
-              >
-                note
-              </a>
+              <a href="https://x.com/hoiku_ai_note" rel="noopener noreferrer" className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:border-orange-200 hover:text-orange-600 transition">X</a>
+              <a href="https://www.instagram.com/hoiku_ai_note" rel="noopener noreferrer" className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:border-orange-200 hover:text-orange-600 transition">Instagram</a>
+              <a href="https://note.com/hoiku_ai_note" rel="noopener noreferrer" className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:border-orange-200 hover:text-orange-600 transition">note</a>
             </div>
-          </div>
-
-          <div className="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400">
-            © {new Date().getFullYear()} 保育AIノート
           </div>
         </div>
       </footer>
