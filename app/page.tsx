@@ -221,23 +221,38 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-12">
       <SiteHeader />
 
-      <main className="max-w-4xl mx-auto px-4 py-8 space-y-8">
-        <section className="space-y-3">
-          <div className="overflow-hidden rounded-[28px] border border-sky-100 bg-gradient-to-br from-sky-50 via-white to-cyan-50 shadow-sm">
-            <div className="relative w-full h-[220px] sm:h-[260px] md:h-[300px]">
-              <Image
-                src="/top-image.png"
-                alt="保育AIノート トップ画像"
-                fill
-                priority
-                className="object-contain p-4 sm:p-6 md:p-8"
-              />
-            </div>
+      <main className="max-w-4xl mx-auto px-4 py-8 space-y-6">
+        <section className="relative overflow-hidden rounded-[32px] border border-sky-100 shadow-sm">
+          <div className="absolute inset-0">
+            <Image
+              src="/top-image.png"
+              alt="保育AIノート"
+              fill
+              priority
+              className="object-cover"
+            />
           </div>
 
-          <p className="text-center text-sm text-slate-500">
-            保育の記録づくりを、もう少しやさしく。
-          </p>
+          <div className="absolute inset-0 bg-white/72 backdrop-blur-[1px]" />
+
+          <div className="relative px-6 py-12 sm:px-10 sm:py-14 md:px-12 md:py-16">
+            <div className="max-w-2xl">
+              <p className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-sky-700 ring-1 ring-sky-100">
+                保育士のための文章作成AI
+              </p>
+
+              <h1 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+                保育の書類づくりを、
+                <br className="hidden sm:block" />
+                もう少しやさしく。
+              </h1>
+
+              <p className="mt-4 text-sm sm:text-base leading-7 text-slate-600">
+                年齢や活動内容、子どもの様子を入力するだけで、
+                活動文・ねらい・評価・援助・環境構成などのたたき台をまとめて作成。
+              </p>
+            </div>
+          </div>
         </section>
 
         <section className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
