@@ -1,14 +1,48 @@
 "use client";
 
-import React, { useState } from "react";
-import SiteHeader from "./components/SiteHeader";
-import SiteFooter from "./components/SiteFooter";
+import Link from "next/link";
+import { useState } from "react";
 
-const IconBaby = () => (
+const IconMenu = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <line x1="4" x2="20" y1="6" y2="6" />
+    <line x1="4" x2="20" y1="12" y2="12" />
+    <line x1="4" x2="20" y1="18" y2="18" />
+  </svg>
+);
+
+const IconClose = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <line x1="18" x2="6" y1="6" y2="18" />
+    <line x1="6" x2="18" y1="6" y2="18" />
+  </svg>
+);
+
+const IconSpark = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -16,372 +50,88 @@ const IconBaby = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path d="M9 12h.01" />
-    <path d="M15 12h.01" />
-    <path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5" />
-    <path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1" />
-    <path d="M12 18v3" />
-    <path d="M11 21h2" />
+    <path d="M12 3l1.2 3.3L16.5 7.5l-3.3 1.2L12 12l-1.2-3.3L7.5 7.5l3.3-1.2L12 3z" />
+    <path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8L19 14z" />
+    <path d="M5 14l.8 2.2L8 17l-2.2.8L5 20l-.8-2.2L2 17l2.2-.8L5 14z" />
   </svg>
 );
 
-const IconCalendar = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-    <line x1="16" x2="16" y1="2" y2="6" />
-    <line x1="8" x2="8" y1="2" y2="6" />
-    <line x1="3" x2="21" y1="10" y2="10" />
-  </svg>
-);
-
-const IconFileText = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-    <polyline points="14 2 14 8 20 8" />
-    <line x1="16" x2="8" y1="13" y2="13" />
-    <line x1="16" x2="8" y1="17" y2="17" />
-    <line x1="10" x2="8" y1="9" y2="9" />
-  </svg>
-);
-
-const IconCheckCircle = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-    <polyline points="22 4 12 14.01 9 11.01" />
-  </svg>
-);
-
-const IconClipboard = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-  </svg>
-);
-
-const IconTrash = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M3 6h18" />
-    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
-    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
-  </svg>
-);
-
-const IconLoader = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="animate-spin"
-  >
-    <line x1="12" x2="12" y1="2" y2="6" />
-    <line x1="12" x2="12" y1="18" y2="22" />
-    <line x1="4.93" x2="7.76" y1="4.93" y2="7.76" />
-    <line x1="16.24" x2="19.07" y1="16.24" y2="19.07" />
-    <line x1="2" x2="6" y1="12" y2="12" />
-    <line x1="18" x2="22" y1="12" y2="12" />
-    <line x1="4.93" x2="7.76" y1="19.07" y2="16.24" />
-    <line x1="16.24" x2="19.07" y1="7.76" y2="4.93" />
-  </svg>
-);
-
-const sectionButtons = [
-  { key: "activity", label: "活動文", icon: "📝" },
-  { key: "goal", label: "ねらい", icon: "🎯" },
-  { key: "evaluation", label: "評価・反省", icon: "⭐" },
-  { key: "newsletter", label: "おたより用", icon: "✉️" },
-  { key: "fiveAreas", label: "5領域", icon: "🌐" },
-  { key: "care", label: "養護", icon: "🛡️" },
-  { key: "support", label: "援助・配慮", icon: "🤝" },
-  { key: "environment", label: "環境構成", icon: "🧱" },
-] as const;
-
-type SectionKey = (typeof sectionButtons)[number]["key"];
-
-export default function App() {
-  const [age, setAge] = useState("5歳児");
-  const [month, setMonth] = useState("3月");
-  const [content, setContent] = useState("");
-  const [behavior, setBehavior] = useState("");
-  const [result, setResult] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [copyStatus, setCopyStatus] = useState("コピー");
-
-  const addSection = async (section: SectionKey, label: string) => {
-    if (!content.trim()) {
-      alert("「内容」を入力してください。");
-      return;
-    }
-
-    setLoading(true);
-
-    try {
-      const res = await fetch("/api/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          age,
-          month,
-          content,
-          behavior,
-          section,
-          label,
-        }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        alert(data.error || "生成に失敗しました。");
-        return;
-      }
-
-      const block = `【${label}】\n${data.result}`;
-      setResult((prev) => (prev ? `${prev}\n\n${block}` : block));
-    } catch (error) {
-      console.error(error);
-      alert("生成に失敗しました。");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const copyResult = async () => {
-    if (!result) return;
-
-    try {
-      await navigator.clipboard.writeText(result);
-      setCopyStatus("完了！");
-      setTimeout(() => setCopyStatus("コピー"), 2000);
-    } catch (error) {
-      console.error(error);
-      alert("コピーに失敗しました。");
-    }
-  };
+export default function SiteHeader() {
+  const [open, setOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 pb-12">
-      <SiteHeader />
-
-      <main className="max-w-4xl mx-auto px-4 py-8 space-y-6">
-        <section className="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 sm:p-10">
-          <div className="max-w-2xl">
-            <p className="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
-              保育士のための文章作成AI
-            </p>
-
-            <h1 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
-              保育の書類づくりを、
-              <br className="hidden sm:block" />
-              もっと簡単に。
-            </h1>
-
-            <p className="mt-4 text-sm sm:text-base leading-7 text-slate-600">
-              年齢・活動内容・子どもの様子を入力するだけで、
-              活動文、ねらい、評価・反省、養護、援助・配慮、環境構成などの
-              たたき台を作成できます。
-            </p>
-          </div>
-        </section>
-
-        <section className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-          <div className="p-5 border-b border-slate-100 bg-slate-50/70 flex items-center gap-2">
-            <span className="text-slate-500">
-              <IconFileText />
-            </span>
-            <h2 className="font-bold text-slate-700">基本情報</h2>
-          </div>
-
-          <div className="p-6 space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-1.5">
-                <label className="flex items-center gap-2 text-xs font-bold text-slate-500 ml-1">
-                  <IconBaby /> 年齢
-                </label>
-                <select
-                  value={age}
-                  onChange={(e) => setAge(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-sky-500/20"
-                >
-                  {["0歳児", "1歳児", "2歳児", "3歳児", "4歳児", "5歳児"].map(
-                    (v) => (
-                      <option key={v} value={v}>
-                        {v}
-                      </option>
-                    )
-                  )}
-                </select>
-              </div>
-
-              <div className="space-y-1.5">
-                <label className="flex items-center gap-2 text-xs font-bold text-slate-500 ml-1">
-                  <IconCalendar /> 月
-                </label>
-                <select
-                  value={month}
-                  onChange={(e) => setMonth(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-sky-500/20"
-                >
-                  {Array.from({ length: 12 }, (_, i) => `${i + 1}月`).map((v) => (
-                    <option key={v} value={v}>
-                      {v}
-                    </option>
-                  ))}
-                </select>
-              </div>
+    <>
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6">
+          <Link
+            href="/"
+            className="flex items-center gap-3"
+            onClick={() => setOpen(false)}
+          >
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-orange-500">
+              <IconSpark />
             </div>
 
-            <div className="space-y-1.5">
-              <label className="flex items-center gap-2 text-xs font-bold text-slate-500 ml-1">
-                内容
-              </label>
-              <textarea
-                placeholder="例：園庭でしっぽ取りをした。"
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 min-h-[88px] outline-none focus:ring-2 focus:ring-sky-500/20 resize-none"
-              />
+            <div className="leading-none">
+              <p className="text-[28px] font-bold tracking-tight text-slate-900">
+                保育AIノート
+              </p>
             </div>
+          </Link>
 
-            <div className="space-y-1.5">
-              <label className="flex items-center gap-2 text-xs font-bold text-slate-500 ml-1">
-                子どもの様子
-              </label>
-              <textarea
-                placeholder="例：自分たちでルールを決めていた。"
-                value={behavior}
-                onChange={(e) => setBehavior(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 min-h-[88px] outline-none focus:ring-2 focus:ring-sky-500/20 resize-none"
-              />
-            </div>
-          </div>
-        </section>
+          <button
+            type="button"
+            aria-label={open ? "メニューを閉じる" : "メニューを開く"}
+            onClick={() => setOpen((prev) => !prev)}
+            className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-500 transition hover:bg-slate-50 hover:text-slate-700"
+          >
+            {open ? <IconClose /> : <IconMenu />}
+          </button>
+        </div>
+      </header>
 
-        <section className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="font-bold text-slate-700">追加する項目</h2>
-            {loading && (
-              <div className="flex items-center gap-1.5 text-sky-600 text-xs font-bold animate-pulse">
-                <IconLoader /> 生成中...
-              </div>
-            )}
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {sectionButtons.map((btn) => (
-              <button
-                key={btn.key}
-                type="button"
-                onClick={() => addSection(btn.key, btn.label)}
-                disabled={loading}
-                className="flex flex-col items-center justify-center p-3 rounded-2xl border border-slate-200 bg-white hover:bg-sky-50 hover:border-sky-200 transition-all gap-1 active:scale-95 disabled:opacity-40"
+      {open && (
+        <div className="fixed inset-0 z-40 bg-black/20" onClick={() => setOpen(false)}>
+          <div
+            className="absolute right-4 top-24 w-[260px] rounded-3xl border border-slate-200 bg-white p-3 shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <nav className="flex flex-col">
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                className="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-sky-50"
               >
-                <span className="text-xl">{btn.icon}</span>
-                <span className="text-[13px] font-bold text-slate-600">
-                  {btn.label}
-                </span>
-              </button>
-            ))}
-          </div>
-        </section>
+                ホーム
+              </Link>
 
-        <section className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
-          <div className="p-5 border-b border-slate-100 flex items-center justify-between">
-            <div className="flex items-center gap-2 text-emerald-600 font-bold">
-              <IconCheckCircle /> 記録ノート
-            </div>
-
-            <div className="flex gap-2">
-              <button
-                type="button"
-                onClick={copyResult}
-                disabled={!result}
-                className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white hover:bg-slate-800 disabled:bg-slate-100 disabled:text-slate-300"
+              <Link
+                href="/about"
+                onClick={() => setOpen(false)}
+                className="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-sky-50"
               >
-                <IconClipboard /> {copyStatus}
-              </button>
+                サイトについて
+              </Link>
 
-              <button
-                type="button"
-                onClick={() => setResult("")}
-                disabled={!result}
-                className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-xs font-bold border border-slate-200 text-slate-500 hover:bg-red-50 hover:text-red-600 disabled:opacity-30"
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-sky-50"
               >
-                <IconTrash /> クリア
-              </button>
-            </div>
-          </div>
+                お問い合わせ
+              </Link>
 
-          <div className="p-6 bg-slate-50/40">
-            <div className="bg-white border border-slate-200 rounded-2xl p-5 min-h-[250px] shadow-inner text-sm leading-relaxed whitespace-pre-wrap text-slate-700">
-              {result || (
-                <div className="h-full flex flex-col items-center justify-center text-slate-300 gap-2 italic py-12">
-                  項目を選択して文章を作成してください
-                </div>
-              )}
-            </div>
+              <Link
+                href="/privacy"
+                onClick={() => setOpen(false)}
+                className="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-sky-50"
+              >
+                プライバシーポリシー
+              </Link>
+            </nav>
           </div>
-        </section>
-      </main>
-
-      <SiteFooter />
-    </div>
+        </div>
+      )}
+    </>
   );
 }
