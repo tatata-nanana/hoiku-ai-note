@@ -7,8 +7,8 @@ import React, { useEffect, useRef, useState } from "react";
 const IconSparkles = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
+    width="18"
+    height="18"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -27,18 +27,35 @@ const IconSparkles = () => (
 const IconMenu = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="22"
-    height="22"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="2.2"
     strokeLinecap="round"
     strokeLinejoin="round"
   >
     <line x1="3" x2="21" y1="6" y2="6" />
     <line x1="3" x2="21" y1="12" y2="12" />
     <line x1="3" x2="21" y1="18" y2="18" />
+  </svg>
+);
+
+const IconClose = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <line x1="18" x2="6" y1="6" y2="18" />
+    <line x1="6" x2="18" y1="6" y2="18" />
   </svg>
 );
 
@@ -68,46 +85,61 @@ export default function SiteHeader() {
     };
   }, []);
 
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
   return (
-    <header className="bg-white border-b border-slate-200 sticky top-0 z-20 shadow-sm">
-      <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="bg-orange-100 p-2 rounded-lg text-orange-600">
+    <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6">
+        <Link href="/" className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50 text-orange-500">
             <IconSparkles />
           </div>
-          <h1 className="text-xl font-bold">保育AIノート</h1>
+
+          <div className="leading-none">
+            <p className="text-[26px] font-bold tracking-tight text-slate-900 sm:text-[28px]">
+              保育AIノート
+            </p>
+          </div>
         </Link>
 
         <div className="relative" ref={menuRef}>
           <button
             type="button"
             onClick={() => setMenuOpen((prev) => !prev)}
-            className="flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 hover:border-orange-200 hover:text-orange-600 transition"
-            aria-label="メニューを開く"
+            className="flex h-12 w-12 items-center justify-center rounded-2xl text-sky-500 transition hover:bg-sky-50"
+            aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
+            aria-expanded={menuOpen}
           >
-            <IconMenu />
+            {menuOpen ? <IconClose /> : <IconMenu />}
           </button>
 
           {menuOpen && (
-            <div className="absolute right-0 mt-2 w-64 rounded-2xl border border-slate-200 bg-white shadow-lg overflow-hidden">
-              <div className="px-4 py-3 border-b border-slate-100 text-sm font-bold text-slate-700">
+            <div className="absolute right-0 top-14 w-72 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
+              <div className="border-b border-slate-100 px-4 py-3 text-sm font-bold text-slate-700">
                 メニュー
               </div>
-              <nav className="py-2">
-                {menuItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
-                    className={`block px-4 py-3 text-sm transition ${
-                      pathname === item.href
-                        ? "bg-orange-50 text-orange-600 font-bold"
-                        : "text-slate-600 hover:bg-orange-50 hover:text-orange-600"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+
+              <nav className="p-2">
+                {menuItems.map((item) => {
+                  const isActive = pathname === item.href;
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className={`block rounded-2xl px-4 py-3 text-sm font-semibold transition ${
+                        isActive
+                          ? "bg-sky-50 text-sky-700"
+                          : "text-slate-600 hover:bg-sky-50 hover:text-sky-700"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
               </nav>
             </div>
           )}
