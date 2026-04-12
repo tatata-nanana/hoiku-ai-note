@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 
@@ -221,6 +222,18 @@ export default function App() {
       <SiteHeader />
 
       <main className="max-w-4xl mx-auto px-4 py-8 space-y-8">
+        <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+          <div className="relative w-full aspect-[16/9]">
+            <Image
+              src="/top-image.png"
+              alt="保育AIノート トップ画像"
+              fill
+              priority
+              className="object-cover"
+            />
+          </div>
+        </section>
+
         <section className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
           <div className="p-5 border-b border-slate-100 bg-slate-50/50 flex items-center gap-2">
             <span className="text-slate-500">
