@@ -281,12 +281,12 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-12">
       <header className="bg-white border-b border-slate-200 sticky top-0 z-20 shadow-sm">
         <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <div className="bg-orange-100 p-2 rounded-lg text-orange-600">
               <IconSparkles />
             </div>
             <h1 className="text-xl font-bold">保育AIノート</h1>
-          </div>
+          </Link>
 
           <div className="relative" ref={menuRef}>
             <button
@@ -294,7 +294,6 @@ export default function App() {
               onClick={() => setMenuOpen((prev) => !prev)}
               className="flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 hover:border-orange-200 hover:text-orange-600 transition"
               aria-label="メニューを開く"
-              aria-expanded={menuOpen}
             >
               <IconMenu />
             </button>
@@ -515,6 +514,70 @@ export default function App() {
           </div>
         </section>
       </main>
+
+      <footer className="mt-10 border-t border-slate-200 bg-white">
+        <div className="max-w-4xl mx-auto px-4 py-8">
+          <div className="flex flex-col gap-6">
+            <div className="space-y-2">
+              <h2 className="text-sm font-bold text-slate-700">保育AIノート</h2>
+              <p className="text-sm text-slate-500 leading-relaxed">
+                更新情報や使い方、活用のヒントなどを公式SNSで発信しています。
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-4 text-sm">
+              <Link
+                href="/about"
+                className="text-slate-500 hover:text-orange-600 transition"
+              >
+                このサイトについて
+              </Link>
+              <Link
+                href="/contact"
+                className="text-slate-500 hover:text-orange-600 transition"
+              >
+                お問い合わせ
+              </Link>
+              <Link
+                href="/privacy"
+                className="text-slate-500 hover:text-orange-600 transition"
+              >
+                プライバシーポリシー
+              </Link>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://x.com/hoiku_ai_note"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:border-orange-200 hover:text-orange-600 transition"
+              >
+                X
+              </a>
+
+              <a
+                href="https://www.instagram.com/hoiku_ai_note"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:border-orange-200 hover:text-orange-600 transition"
+              >
+                Instagram
+              </a>
+
+              <a
+                href="https://note.com/hoiku_ai_note"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50 hover:border-orange-200 hover:text-orange-600 transition"
+              >
+                note
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-400">
+            © {new Date().getFullYear()} 保育AIノート
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
