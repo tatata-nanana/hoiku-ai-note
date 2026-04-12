@@ -222,20 +222,26 @@ export default function App() {
       <SiteHeader />
 
       <main className="max-w-4xl mx-auto px-4 py-8 space-y-8">
-        <section className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-          <div className="relative w-full aspect-[16/9]">
-            <Image
-              src="/top-image.png"
-              alt="保育AIノート トップ画像"
-              fill
-              priority
-              className="object-cover"
-            />
+        <section className="space-y-3">
+          <div className="overflow-hidden rounded-[28px] border border-sky-100 bg-gradient-to-br from-sky-50 via-white to-cyan-50 shadow-sm">
+            <div className="relative w-full h-[220px] sm:h-[260px] md:h-[300px]">
+              <Image
+                src="/top-image.png"
+                alt="保育AIノート トップ画像"
+                fill
+                priority
+                className="object-contain p-4 sm:p-6 md:p-8"
+              />
+            </div>
           </div>
+
+          <p className="text-center text-sm text-slate-500">
+            保育の記録づくりを、もう少しやさしく。
+          </p>
         </section>
 
         <section className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-          <div className="p-5 border-b border-slate-100 bg-slate-50/50 flex items-center gap-2">
+          <div className="p-5 border-b border-slate-100 bg-slate-50/70 flex items-center gap-2">
             <span className="text-slate-500">
               <IconFileText />
             </span>
@@ -251,7 +257,7 @@ export default function App() {
                 <select
                   value={age}
                   onChange={(e) => setAge(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-orange-500/20"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-sky-500/20"
                 >
                   {["0歳児", "1歳児", "2歳児", "3歳児", "4歳児", "5歳児"].map(
                     (v) => (
@@ -270,7 +276,7 @@ export default function App() {
                 <select
                   value={month}
                   onChange={(e) => setMonth(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-orange-500/20"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-sky-500/20"
                 >
                   {Array.from({ length: 12 }, (_, i) => `${i + 1}月`).map((v) => (
                     <option key={v} value={v}>
@@ -289,7 +295,7 @@ export default function App() {
                 placeholder="例：園庭でしっぽ取りをした。"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 min-h-[80px] outline-none focus:ring-2 focus:ring-orange-500/20 resize-none"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 min-h-[88px] outline-none focus:ring-2 focus:ring-sky-500/20 resize-none"
               />
             </div>
 
@@ -301,7 +307,7 @@ export default function App() {
                 placeholder="例：自分たちでルールを決めていた。"
                 value={behavior}
                 onChange={(e) => setBehavior(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 min-h-[80px] outline-none focus:ring-2 focus:ring-orange-500/20 resize-none"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 min-h-[88px] outline-none focus:ring-2 focus:ring-sky-500/20 resize-none"
               />
             </div>
           </div>
@@ -311,7 +317,7 @@ export default function App() {
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-bold text-slate-700">追加する項目</h2>
             {loading && (
-              <div className="flex items-center gap-1.5 text-orange-600 text-xs font-bold animate-pulse">
+              <div className="flex items-center gap-1.5 text-sky-600 text-xs font-bold animate-pulse">
                 <IconLoader /> 生成中...
               </div>
             )}
@@ -324,7 +330,7 @@ export default function App() {
                 type="button"
                 onClick={() => addSection(btn.key, btn.label)}
                 disabled={loading}
-                className="flex flex-col items-center justify-center p-3 rounded-2xl border border-slate-200 bg-white hover:bg-orange-50 hover:border-orange-200 transition-all gap-1 active:scale-95 disabled:opacity-40"
+                className="flex flex-col items-center justify-center p-3 rounded-2xl border border-slate-200 bg-white hover:bg-sky-50 hover:border-sky-200 transition-all gap-1 active:scale-95 disabled:opacity-40"
               >
                 <span className="text-xl">{btn.icon}</span>
                 <span className="text-[13px] font-bold text-slate-600">
@@ -337,7 +343,7 @@ export default function App() {
 
         <section className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
           <div className="p-5 border-b border-slate-100 flex items-center justify-between">
-            <div className="flex items-center gap-2 text-green-600 font-bold">
+            <div className="flex items-center gap-2 text-emerald-600 font-bold">
               <IconCheckCircle /> 記録ノート
             </div>
 
@@ -362,7 +368,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="p-6 bg-slate-50/30">
+          <div className="p-6 bg-slate-50/40">
             <div className="bg-white border border-slate-200 rounded-2xl p-5 min-h-[250px] shadow-inner text-sm leading-relaxed whitespace-pre-wrap text-slate-700">
               {result || (
                 <div className="h-full flex flex-col items-center justify-center text-slate-300 gap-2 italic py-12">
