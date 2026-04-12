@@ -13,7 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "保育AIノート",
+  title: {
+    default: "保育AIノート",
+    template: "%s | 保育AIノート",
+  },
   description:
     "保育士向けの文章作成をサポートするサービス。活動文、ねらい、評価・反省、養護、援助・配慮、環境構成などのたたき台を作成できます。",
 };
