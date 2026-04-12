@@ -359,50 +359,6 @@ export default function App() {
             </div>
           </div>
         </section>
-
-        <section className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-          <div className="px-6 pt-6 pb-4">
-            <h2 className="text-lg font-bold text-slate-800">SNS</h2>
-            <p className="mt-2 text-sm text-slate-500 leading-relaxed">
-              更新情報や使い方、活用のヒントを発信しています。
-            </p>
-          </div>
-
-          <div className="px-6">
-            <div className="border-t border-slate-200" />
-          </div>
-
-          <div className="px-6 py-4">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
-              <a
-                href="https://x.com/hoiku_ai_note"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between py-4 border-b border-slate-200 text-slate-700 hover:text-orange-600 transition"
-              >
-                <span className="font-medium">X</span>
-                <span className="text-slate-400">→</span>
-              </a>
-
-              <a
-                href="https://www.instagram.com/hoiku_ai_note"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between py-4 border-b sm:border-l sm:pl-6 border-slate-200 text-slate-700 hover:text-orange-600 transition"
-              >
-                <span className="font-medium">Instagram</span>
-                <span className="text-slate-400">→</span>
-              </a>
-
-              <a
-                href="https://note.com/hoiku_ai_note"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between py-4 border-b sm:border-l sm:pl-6 border-slate-200 text-slate-700 hover:text-orange-600 transition"
-              >
-                <span className="font-medium">note</span>
-                <span className="text-slate-400">→</span>
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
 
       <SiteFooter />
