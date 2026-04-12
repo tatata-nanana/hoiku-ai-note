@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 const IconSparkles = () => (
@@ -51,6 +52,7 @@ const menuItems = [
 export default function ContactPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -96,7 +98,11 @@ export default function ContactPage() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setMenuOpen(false)}
-                      className="block px-4 py-3 text-sm text-slate-600 hover:bg-orange-50 hover:text-orange-600 transition"
+                      className={`block px-4 py-3 text-sm transition ${
+                        pathname === item.href
+                          ? "bg-orange-50 text-orange-600 font-bold"
+                          : "text-slate-600 hover:bg-orange-50 hover:text-orange-600"
+                      }`}
                     >
                       {item.label}
                     </Link>
@@ -149,19 +155,31 @@ export default function ContactPage() {
             <div className="flex flex-wrap gap-4 text-sm">
               <Link
                 href="/about"
-                className="text-slate-500 hover:text-orange-600 transition"
+                className={`transition ${
+                  pathname === "/about"
+                    ? "text-orange-600 font-bold"
+                    : "text-slate-500 hover:text-orange-600"
+                }`}
               >
                 このサイトについて
               </Link>
               <Link
                 href="/contact"
-                className="text-slate-500 hover:text-orange-600 transition"
+                className={`transition ${
+                  pathname === "/contact"
+                    ? "text-orange-600 font-bold"
+                    : "text-slate-500 hover:text-orange-600"
+                }`}
               >
                 お問い合わせ
               </Link>
               <Link
                 href="/privacy"
-                className="text-slate-500 hover:text-orange-600 transition"
+                className={`transition ${
+                  pathname === "/privacy"
+                    ? "text-orange-600 font-bold"
+                    : "text-slate-500 hover:text-orange-600"
+                }`}
               >
                 プライバシーポリシー
               </Link>
