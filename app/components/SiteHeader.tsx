@@ -80,7 +80,7 @@ export default function SiteHeader() {
               alt="保育AIノート ロゴ"
               width={44}
               height={44}
-              className="h-11 w-11 object-cover"
+              className="h-11 w-11 object-contain"
               priority
             />
           </div>
