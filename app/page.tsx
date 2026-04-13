@@ -222,22 +222,47 @@ export default function App() {
 
       <main className="mx-auto max-w-4xl space-y-6 px-4 py-8">
         <section className="rounded-[32px] border border-slate-200 bg-white px-8 py-9 shadow-sm sm:px-10 sm:py-10">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <p className="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
               保育士のための文章作成AI
             </p>
 
-            <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
               保育の書類づくりを、
-              <br />
+              <br className="hidden sm:block" />
               もっと簡単に。
             </h1>
 
-            <p className="mt-5 text-base leading-8 text-slate-600">
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
               年齢・活動内容・子どもの様子を入力するだけで、
               活動文、ねらい、評価・反省、養護、援助・配慮、環境構成などの
-              たたき台を作成できます。
+              たたき台をすばやく作成できます。
             </p>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-sky-100 bg-sky-50/60 px-4 py-4">
+                <p className="text-sm font-bold text-slate-800">活動文・ねらい</p>
+                <p className="mt-1 text-xs leading-6 text-slate-600">
+                  日々の記録や月案づくりのたたき台を作成。
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-sky-100 bg-sky-50/60 px-4 py-4">
+                <p className="text-sm font-bold text-slate-800">評価・反省</p>
+                <p className="mt-1 text-xs leading-6 text-slate-600">
+                  振り返りの文章を整理し、書き出しを助けます。
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-sky-100 bg-sky-50/60 px-4 py-4">
+                <p className="text-sm font-bold text-slate-800">
+                  養護・援助・環境構成
+                </p>
+                <p className="mt-1 text-xs leading-6 text-slate-600">
+                  保育の視点を整理しながら、文章化をサポートします。
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
