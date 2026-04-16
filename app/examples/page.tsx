@@ -16,7 +16,7 @@ export default function ExamplesPage() {
             </p>
 
             <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
-              保育の作例を、
+              文章の作例を、
               <br className="hidden sm:block" />
               年齢ごとに探せます。
             </h1>
