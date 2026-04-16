@@ -42,6 +42,7 @@ const IconClose = () => (
 
 const menuItems = [
   { href: "/", label: "トップ" },
+  { href: "/examples", label: "作例ページ" },
   { href: "/about", label: "このサイトについて" },
   { href: "/contact", label: "お問い合わせ" },
   { href: "/privacy", label: "プライバシーポリシー" },
