@@ -35,31 +35,6 @@ export const examples: ExampleItem[] = [
 ・一人一人の気持ちを受け止めながら、安心して新しい環境に慣れていけるようにしていく。
 ・友達との関わりが広がるよう、遊びの仲立ちをしながらやり取りを支えていく。`,
   },
-  {
-    ageSlug: "5sai",
-    ageLabel: "5歳児",
-    monthSlug: "4gatsu",
-    monthLabel: "4月",
-    categorySlug: "katsudoubun",
-    categoryLabel: "活動文",
-    title: "5歳児 4月 活動文 作例",
-    description:
-      "進級直後の子どもたちの様子をまとめた活動文の作例です。",
-    body: `新しいクラスでの生活が始まり、子どもたちは進級したことを喜びながら意欲的に過ごしていた。好きな遊びを見つけて楽しむ中で、友達や保育者に自分の思いを伝えたり、関わりを深めたりする姿が見られた。戸外遊びでは体を十分に動かし、開放感を味わいながら元気いっぱいに遊んでいた。`,
-  },
-  {
-    ageSlug: "5sai",
-    ageLabel: "5歳児",
-    monthSlug: "4gatsu",
-    monthLabel: "4月",
-    categorySlug: "nerai",
-    categoryLabel: "ねらい",
-    title: "5歳児 4月 ねらい 作例",
-    description:
-      "4月の園生活に向けたねらいの作例です。",
-    body: `・進級した喜びを感じながら、新しい生活の流れに慣れていく。
-・友達や保育者と関わりながら、安心して好きな遊びを楽しんでいく。`,
-  },
 ];
 
 export const ages = Array.from(

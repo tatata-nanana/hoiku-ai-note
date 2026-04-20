@@ -5,19 +5,21 @@ import SiteFooter from "../../components/SiteFooter";
 import { ages, getMonthsByAge } from "../../lib/examples";
 
 type Props = {
-  params: {
+  params: Promise<{
     age: string;
-  };
+  }>;
 };
 
-export default function AgePage({ params }: Props) {
-  const ageInfo = ages.find((item) => item.ageSlug === params.age);
+export default async function AgePage({ params }: Props) {
+  const { age } = await params;
+
+  const ageInfo = ages.find((item) => item.ageSlug === age);
 
   if (!ageInfo) {
     notFound();
   }
 
-  const months = getMonthsByAge(params.age);
+  const months = getMonthsByAge(age);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-12">
@@ -54,7 +56,7 @@ export default function AgePage({ params }: Props) {
             {months.map((month) => (
               <Link
                 key={month.monthSlug}
-                href={`/examples/${params.age}/${month.monthSlug}`}
+                href={`/examples/${age}/${month.monthSlug}`}
                 className="rounded-2xl border border-slate-200 bg-white p-5 text-center font-bold text-slate-700 transition hover:border-sky-200 hover:bg-sky-50"
               >
                 {month.monthLabel}
