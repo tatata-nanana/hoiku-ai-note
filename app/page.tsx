@@ -220,61 +220,46 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-12">
       <SiteHeader />
 
-      <main className="mx-auto max-w-4xl space-y-6 px-4 py-8">
-        <section className="rounded-[32px] border border-slate-200 bg-white px-8 py-9 shadow-sm sm:px-10 sm:py-10">
+      <main className="mx-auto max-w-4xl space-y-5 px-4 py-6 sm:py-8">
+        <section className="rounded-[28px] border border-slate-200 bg-white px-6 py-7 shadow-sm sm:px-10 sm:py-10">
           <div className="max-w-3xl">
-            <p className="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
-              保育士のための文章作成AI
+            <p className="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-700">
+              保育士向けAI文章作成ツール
             </p>
 
             <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
-              保育の書類づくりを、
-              <br className="hidden sm:block" />
-              もっと簡単に。
+              月案・日誌・連絡帳の文章作成をかんたんに
             </h1>
 
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
-              年齢・活動内容・子どもの様子を入力するだけで、
-              活動文、ねらい、評価・反省、養護、援助・配慮、環境構成などの
-              たたき台をすばやく作成できます。
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+              活動内容や子どもの様子を入れるだけで、保育書類のたたき台を作れます。
             </p>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-sky-100 bg-sky-50/60 px-4 py-4">
-                <p className="text-sm font-bold text-slate-800">活動文・ねらい</p>
-                <p className="mt-1 text-xs leading-6 text-slate-600">
-                  日々の記録や月案づくりのたたき台を作成。
-                </p>
+            <div className="mt-6 grid gap-2 text-sm font-bold text-slate-700 sm:grid-cols-3">
+              <div className="rounded-2xl bg-slate-50 px-4 py-3">
+                1. 年齢と月を選ぶ
               </div>
-
-              <div className="rounded-2xl border border-sky-100 bg-sky-50/60 px-4 py-4">
-                <p className="text-sm font-bold text-slate-800">評価・反省</p>
-                <p className="mt-1 text-xs leading-6 text-slate-600">
-                  振り返りの文章を整理し、書き出しを助けます。
-                </p>
+              <div className="rounded-2xl bg-slate-50 px-4 py-3">
+                2. 様子を入力する
               </div>
-
-              <div className="rounded-2xl border border-sky-100 bg-sky-50/60 px-4 py-4">
-                <p className="text-sm font-bold text-slate-800">
-                  養護・援助・環境構成
-                </p>
-                <p className="mt-1 text-xs leading-6 text-slate-600">
-                  保育の視点を整理しながら、文章化をサポートします。
-                </p>
+              <div className="rounded-2xl bg-slate-50 px-4 py-3">
+                3. 必要な項目を作成
               </div>
             </div>
           </div>
         </section>
 
-        <section className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm">
-          <div className="flex items-center gap-2 border-b border-slate-100 bg-slate-50/70 px-5 py-5">
+        <section className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm">
+          <div className="flex items-center gap-2 border-b border-slate-100 bg-white px-5 py-4">
             <span className="text-slate-500">
               <IconFileText />
             </span>
-            <h2 className="text-lg font-bold text-slate-700">基本情報</h2>
+            <h2 className="text-lg font-bold text-slate-800">
+              まずは入力してください
+            </h2>
           </div>
 
-          <div className="space-y-6 p-6">
+          <div className="space-y-5 p-5 sm:p-6">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="space-y-2">
                 <label className="ml-1 flex items-center gap-2 text-xs font-bold text-slate-500">
@@ -283,7 +268,7 @@ export default function App() {
                 <select
                   value={age}
                   onChange={(e) => setAge(e.target.value)}
-                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:ring-2 focus:ring-sky-500/20"
+                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-base outline-none transition focus:border-sky-300 focus:ring-2 focus:ring-sky-500/20"
                 >
                   {["0歳児", "1歳児", "2歳児", "3歳児", "4歳児", "5歳児"].map(
                     (v) => (
@@ -302,7 +287,7 @@ export default function App() {
                 <select
                   value={month}
                   onChange={(e) => setMonth(e.target.value)}
-                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 outline-none transition focus:ring-2 focus:ring-sky-500/20"
+                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-base outline-none transition focus:border-sky-300 focus:ring-2 focus:ring-sky-500/20"
                 >
                   {Array.from({ length: 12 }, (_, i) => `${i + 1}月`).map((v) => (
                     <option key={v} value={v}>
@@ -314,34 +299,42 @@ export default function App() {
             </div>
 
             <div className="space-y-2">
-              <label className="ml-1 flex items-center gap-2 text-xs font-bold text-slate-500">
-                内容
+              <label className="ml-1 text-xs font-bold text-slate-500">
+                活動内容
               </label>
               <textarea
                 placeholder="例：園庭でしっぽ取りをした。"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                className="min-h-[110px] w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:ring-2 focus:ring-sky-500/20"
+                className="min-h-[96px] w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-base outline-none transition focus:border-sky-300 focus:ring-2 focus:ring-sky-500/20"
               />
             </div>
 
             <div className="space-y-2">
-              <label className="ml-1 flex items-center gap-2 text-xs font-bold text-slate-500">
+              <label className="ml-1 text-xs font-bold text-slate-500">
                 子どもの様子
               </label>
               <textarea
-                placeholder="例：自分たちでルールを決めていた。"
+                placeholder="例：自分たちでルールを決め、友だちと声をかけ合って楽しんでいた。"
                 value={behavior}
                 onChange={(e) => setBehavior(e.target.value)}
-                className="min-h-[110px] w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 outline-none transition focus:ring-2 focus:ring-sky-500/20"
+                className="min-h-[96px] w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-base outline-none transition focus:border-sky-300 focus:ring-2 focus:ring-sky-500/20"
               />
             </div>
           </div>
         </section>
 
-        <section className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-bold text-slate-700">追加する項目</h2>
+        <section className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <div>
+              <h2 className="text-lg font-bold text-slate-800">
+                作成する文章を選ぶ
+              </h2>
+              <p className="mt-1 text-xs text-slate-500">
+                必要な項目だけ選べます。
+              </p>
+            </div>
+
             {loading && (
               <div className="flex items-center gap-1.5 text-xs font-bold text-sky-600 animate-pulse">
                 <IconLoader /> 生成中...
@@ -356,10 +349,10 @@ export default function App() {
                 type="button"
                 onClick={() => addSection(btn.key, btn.label)}
                 disabled={loading}
-                className="flex flex-col items-center justify-center gap-1 rounded-2xl border border-slate-200 bg-white p-4 transition-all hover:border-sky-200 hover:bg-sky-50 active:scale-95 disabled:opacity-40"
+                className="flex min-h-[86px] flex-col items-center justify-center gap-1 rounded-2xl border border-slate-200 bg-white p-4 transition-all hover:border-sky-200 hover:bg-sky-50 active:scale-95 disabled:opacity-40"
               >
                 <span className="text-xl">{btn.icon}</span>
-                <span className="text-[13px] font-bold text-slate-600">
+                <span className="text-[13px] font-bold text-slate-700">
                   {btn.label}
                 </span>
               </button>
@@ -367,10 +360,10 @@ export default function App() {
           </div>
         </section>
 
-        <section className="flex flex-col overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm">
-          <div className="flex items-center justify-between border-b border-slate-100 px-5 py-5">
+        <section className="flex flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm">
+          <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
             <div className="flex items-center gap-2 font-bold text-emerald-600">
-              <IconCheckCircle /> 記録ノート
+              <IconCheckCircle /> 作成結果
             </div>
 
             <div className="flex gap-2">
@@ -394,15 +387,28 @@ export default function App() {
             </div>
           </div>
 
-          <div className="bg-slate-50/40 p-6">
-            <div className="min-h-[260px] rounded-2xl border border-slate-200 bg-white p-5 text-sm leading-relaxed text-slate-700 shadow-inner whitespace-pre-wrap">
+          <div className="bg-slate-50/40 p-5 sm:p-6">
+            <div className="min-h-[230px] rounded-2xl border border-slate-200 bg-white p-5 text-sm leading-relaxed text-slate-700 shadow-inner whitespace-pre-wrap">
               {result || (
-                <div className="flex h-full flex-col items-center justify-center gap-2 py-12 italic text-slate-300">
-                  項目を選択して文章を作成してください
+                <div className="flex h-full flex-col items-center justify-center gap-2 py-12 text-center text-slate-300">
+                  入力後、作成したい項目を選んでください
                 </div>
               )}
             </div>
           </div>
+        </section>
+
+        <section className="rounded-[28px] border border-slate-200 bg-white px-6 py-6 text-sm leading-7 text-slate-600 shadow-sm">
+          <h2 className="text-base font-bold text-slate-800">
+            保育AIノートで作れる文章
+          </h2>
+          <p className="mt-2">
+            保育AIノートは、保育士の書類作成を助けるAIツールです。
+            月案、日誌、連絡帳、活動文、ねらい、評価・反省、養護、援助・配慮、環境構成などの文章を、入力内容に合わせて作成できます。
+          </p>
+          <p className="mt-2">
+            生成された文章はそのまま使うのではなく、園の方針や子どもの実際の姿に合わせて調整してください。
+          </p>
         </section>
       </main>
 
