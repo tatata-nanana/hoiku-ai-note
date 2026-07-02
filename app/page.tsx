@@ -255,7 +255,7 @@ export default function App() {
               <IconFileText />
             </span>
             <h2 className="text-lg font-bold text-slate-800">
-              まずは入力してください
+              活動内容と様子を入力してください
             </h2>
           </div>
 
@@ -315,7 +315,7 @@ export default function App() {
                 子どもの様子
               </label>
               <textarea
-                placeholder="例：自分たちでルールを決め、友だちと声をかけ合って楽しんでいた。"
+                placeholder="例：楽しんでいた。"
                 value={behavior}
                 onChange={(e) => setBehavior(e.target.value)}
                 className="min-h-[96px] w-full resize-none rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-base outline-none transition focus:border-sky-300 focus:ring-2 focus:ring-sky-500/20"
