@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import { ages } from "../lib/examples";
+
+export const metadata: Metadata = {
+  title: "保育士向け月案・日誌・連絡帳の作例集",
+  description:
+    "保育士向けの月案・日誌・連絡帳・児童票などの作例を年齢別・月別に掲載しています。ねらい、5領域、養護、援助・配慮、環境構成など、保育書類を考えるときの参考に使える文章例をまとめています。",
+};
 
 export default function ExamplesPage() {
   return (
