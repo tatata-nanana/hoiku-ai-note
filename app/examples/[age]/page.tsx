@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteHeader from "../../components/SiteHeader";
@@ -9,6 +10,22 @@ type Props = {
     age: string;
   }>;
 };
+
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
+  const { age } = await params;
+  const ageInfo = ages.find((item) => item.ageSlug === age);
+
+  if (!ageInfo) {
+    return {};
+  }
+
+  return {
+    title: `${ageInfo.ageLabel}の月案・日誌・ねらい作例集｜保育AIノート`,
+    description: `${ageInfo.ageLabel}の月案・日誌などに使える文章作例を月別に掲載しています。ねらい、評価・反省、援助・配慮、環境構成など、${ageInfo.ageLabel}の保育書類を考えるときの参考としてご活用ください。`,
+  };
+}
 
 export default async function AgePage({ params }: Props) {
   const { age } = await params;
@@ -22,46 +39,50 @@ export default async function AgePage({ params }: Props) {
   const months = getMonthsByAge(age);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 pb-12">
+    <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
 
-      <main className="mx-auto max-w-4xl space-y-6 px-4 py-8">
-        <section className="rounded-[32px] border border-slate-200 bg-white px-8 py-9 shadow-sm sm:px-10 sm:py-10">
-          <p className="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
-            {ageInfo.ageLabel} の作例
-          </p>
-
-          <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
-            {ageInfo.ageLabel} の
-            <br className="hidden sm:block" />
-            月別作例一覧
+      <main>
+        {/* 下層ページ見出し */}
+        <section
+          style={{
+            width: "100%",
+            height: "110px",
+            backgroundColor: "#a9ddf5",
+          }}
+          className="flex items-center justify-center"
+        >
+          <h1 className="text-2xl font-medium tracking-tight text-black">
+            {ageInfo.ageLabel}
           </h1>
-
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
-            見たい月を選んでください。
-          </p>
         </section>
 
-        <section className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="mb-4">
-            <Link
-              href="/examples"
-              className="text-sm font-bold text-sky-700 hover:underline"
-            >
-              ← 作例トップへ戻る
-            </Link>
-          </div>
+        {/* 月別一覧 */}
+        <section className="bg-white py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <div className="text-center">
+              <h2 className="text-2xl font-medium text-slate-950 sm:text-3xl">
+                月から作例を探す
+              </h2>
+            </div>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {months.map((month) => (
-              <Link
-                key={month.monthSlug}
-                href={`/examples/${age}/${month.monthSlug}`}
-                className="rounded-2xl border border-slate-200 bg-white p-5 text-center font-bold text-slate-700 transition hover:border-sky-200 hover:bg-sky-50"
-              >
-                {month.monthLabel}
-              </Link>
-            ))}
+            <div className="mx-auto mt-12 grid max-w-4xl grid-cols-3 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4">
+              {months.map((month) => (
+                <Link
+                  key={month.monthSlug}
+                  href={`/examples/${age}/${month.monthSlug}`}
+                  className="group flex min-h-[90px] items-center justify-between rounded-2xl border border-slate-200 bg-white px-3 py-4 transition hover:border-sky-200 hover:bg-sky-50/50 sm:min-h-[120px] sm:px-5 sm:py-6"
+                >
+                  <span className="text-lg font-medium text-slate-900 transition group-hover:text-sky-600 sm:text-3xl">
+                    {month.monthLabel}
+                  </span>
+
+                  <span className="text-sm text-slate-300 transition group-hover:translate-x-1 group-hover:text-sky-500 sm:text-lg">
+                    →
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       </main>

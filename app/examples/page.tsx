@@ -5,49 +5,60 @@ import SiteFooter from "../components/SiteFooter";
 import { ages } from "../lib/examples";
 
 export const metadata: Metadata = {
-  title: "保育士向け月案・日誌・連絡帳の作例集",
+  title: "保育士向け月案・日誌・連絡帳の作例集｜保育AIノート",
   description:
-    "保育士向けの月案・日誌・連絡帳・児童票などの作例を年齢別・月別に掲載しています。ねらい、5領域、養護、援助・配慮、環境構成など、保育書類を考えるときの参考に使える文章例をまとめています。",
+    "0歳児から5歳児まで、保育士向けの月案・日誌・連絡帳などに使える文章作例を年齢別・月別に掲載しています。ねらい、5領域、養護、援助・配慮、環境構成、評価・反省など、保育書類を考えるときの参考にできます。",
 };
 
 export default function ExamplesPage() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 pb-12">
+    <div className="min-h-screen bg-white text-slate-900">
       <SiteHeader />
 
-      <main className="mx-auto max-w-4xl space-y-6 px-4 py-8">
-        <section className="rounded-[32px] border border-slate-200 bg-white px-8 py-9 shadow-sm sm:px-10 sm:py-10">
-          <div className="max-w-3xl">
-            <p className="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
-              作例ページ
-            </p>
-
-            <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
-              文章の作例を、
-              <br className="hidden sm:block" />
-              年齢ごとに探せます。
-            </h1>
-
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
-              月齢・月・内容ごとに作例を確認できます。
-              気になる年齢を選んでください。
-            </p>
-          </div>
+      <main>
+        {/* 下層ページ見出し */}
+        <section
+          style={{
+            width: "100%",
+            height: "110px",
+            backgroundColor: "#a9ddf5",
+          }}
+          className="flex items-center justify-center"
+        >
+          <h1 className="text-2xl font-medium tracking-tight text-black">
+            作例
+          </h1>
         </section>
 
-        <section className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="mb-4 text-lg font-bold text-slate-700">年齢から選ぶ</h2>
+        {/* 年齢 */}
+        <section className="bg-white py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <div className="text-center">
+              <h2 className="text-2xl font-medium text-slate-950 sm:text-3xl">
+                年齢から作例を探す
+              </h2>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {ages.map((age) => (
-              <Link
-                key={age.ageSlug}
-                href={`/examples/${age.ageSlug}`}
-                className="rounded-2xl border border-slate-200 bg-white p-5 text-center font-bold text-slate-700 transition hover:border-sky-200 hover:bg-sky-50"
-              >
-                {age.ageLabel}
-              </Link>
-            ))}
+              <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-500">
+              </p>
+            </div>
+
+            <div className="mx-auto mt-12 grid max-w-4xl grid-cols-3 gap-2 sm:gap-3">
+              {ages.map((age) => (
+                <Link
+                  key={age.ageSlug}
+                  href={`/examples/${age.ageSlug}`}
+                  className="group flex min-h-[90px] items-center justify-between rounded-2xl border border-slate-200 bg-white px-3 py-4 transition hover:border-sky-200 hover:bg-sky-50/50 sm:min-h-[120px] sm:px-5 sm:py-6"
+                >
+                  <span className="text-base font-medium text-slate-900 transition group-hover:text-sky-600 sm:text-3xl">
+                    {age.ageLabel}
+                  </span>
+
+                  <span className="text-sm text-slate-300 transition group-hover:translate-x-1 group-hover:text-sky-500 sm:text-lg">
+                    →
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       </main>

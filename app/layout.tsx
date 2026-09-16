@@ -13,12 +13,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.hoikuainote.com"),
+
   title: {
-    default: "保育AIノート｜保育士の月案・日誌・児童票をAIでかんたん作成",
-    template: "%s | 保育AIノート",
+    default:
+      "保育AIノート｜保育士の月案・日誌・書類作成をAIでサポート",
+    template: "%s｜保育AIノート",
   },
+
   description:
-    "保育AIノートは、保育士の書類作成をAIでサポートする文章作成ツールです。年齢・月・活動内容・子どもの様子を入力するだけで、月案・日誌・連絡帳・児童票・ねらい・評価反省・養護・援助配慮・環境構成など、保育現場で必要な文章のたたき台をかんたんに作成できます",
+    "保育AIノートは、保育士の月案や日誌などの書類作成をサポートするサービスです。年齢・月・活動内容・子どもの様子を入力すると、ねらい、評価・反省、養護、援助・配慮、環境構成など、必要な文章のたたき台をAIで作成できます。",
+
+  applicationName: "保育AIノート",
+
+  openGraph: {
+    type: "website",
+    locale: "ja_JP",
+    siteName: "保育AIノート",
+    title:
+      "保育AIノート｜保育士の月案・日誌・書類作成をAIでサポート",
+    description:
+      "保育AIノートは、保育士の月案や日誌などの書類作成をサポートするサービスです。年齢・月・活動内容・子どもの様子を入力すると、ねらい、評価・反省、養護、援助・配慮、環境構成など、必要な文章のたたき台をAIで作成できます。",
+    url: "https://www.hoikuainote.com",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -35,6 +57,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         ></script>
       </head>
+
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>

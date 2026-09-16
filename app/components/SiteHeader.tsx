@@ -42,6 +42,7 @@ const IconClose = () => (
 
 const menuItems = [
   { href: "/", label: "トップ" },
+  { href: "/column", label: "製作者コラム" },
   { href: "/examples", label: "作例ページ" },
   { href: "/about", label: "このサイトについて" },
   { href: "/contact", label: "お問い合わせ" },
@@ -56,12 +57,14 @@ export default function SiteHeader() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (!menuRef.current) return;
+
       if (!menuRef.current.contains(event.target as Node)) {
         setMenuOpen(false);
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -74,6 +77,7 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6">
+        {/* ロゴ */}
         <Link href="/" className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-white">
             <Image
@@ -93,6 +97,7 @@ export default function SiteHeader() {
           </div>
         </Link>
 
+        {/* メニュー */}
         <div className="relative" ref={menuRef}>
           <button
             type="button"
@@ -112,7 +117,10 @@ export default function SiteHeader() {
 
               <nav className="p-2">
                 {menuItems.map((item) => {
-                  const isActive = pathname === item.href;
+                  const isActive =
+                    item.href === "/"
+                      ? pathname === "/"
+                      : pathname.startsWith(item.href);
 
                   return (
                     <Link
