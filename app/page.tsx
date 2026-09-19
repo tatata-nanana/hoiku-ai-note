@@ -275,7 +275,9 @@ export default function App() {
           <div className="mx-auto grid h-[calc(100vh-88px)] min-h-[620px] max-h-[820px] max-w-[1240px] grid-cols-[1.05fr_0.95fr] items-center gap-10 px-12 xl:px-16">
             <div className="flex h-full flex-col justify-center">
               <h1 className="text-[clamp(48px,4.4vw,72px)] font-black leading-[1.08] tracking-[-0.04em] text-black">
-                書類制作の負担を、
+                <span className="whitespace-nowrap">
+                  書類制作の負担を、
+                </span>
                 <br />
                 もっと少なく。
               </h1>
@@ -406,7 +408,13 @@ export default function App() {
               >
                 <rect x="3" y="3" width="18" height="18" rx="5" />
                 <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="1"
+                  fill="currentColor"
+                  stroke="none"
+                />
               </svg>
             </a>
 
@@ -416,7 +424,11 @@ export default function App() {
               rel="noreferrer"
               aria-label="X"
             >
-              <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                className="h-7 w-7 fill-current"
+                aria-hidden="true"
+              >
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
               </svg>
             </a>
@@ -469,7 +481,7 @@ export default function App() {
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <div className="text-center">
             <p className="text-sm font-medium tracking-[0.08em] text-sky-500">
-            
+              
             </p>
 
             <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
@@ -491,12 +503,25 @@ export default function App() {
                 <span className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-rose-200 text-2xl font-semibold text-white">
                   01
                 </span>
+
                 <div className="relative z-10 pt-1">
-                  <h3 className="text-2xl font-semibold text-slate-950">年齢と月を選ぶ</h3>
-                  <p className="mt-3 text-base leading-8 text-slate-600">クラスの年齢と、作成したい月を選択します。</p>
+                  <h3 className="text-2xl font-semibold text-slate-950">
+                    年齢と月を選ぶ
+                  </h3>
+
+                  <p className="mt-3 text-base leading-8 text-slate-600">
+                    クラスの年齢と、作成したい月を選択します。
+                  </p>
                 </div>
               </div>
-              <Image src="/howto-step01.png" alt="" width={180} height={180} className="pointer-events-none absolute bottom-0 right-10 h-auto w-[150px] object-contain" />
+
+              <Image
+                src="/howto-step01.png"
+                alt=""
+                width={180}
+                height={180}
+                className="pointer-events-none absolute bottom-0 right-10 h-auto w-[150px] object-contain"
+              />
             </div>
 
             {/* 02 */}
@@ -505,56 +530,133 @@ export default function App() {
                 <span className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-emerald-300 text-2xl font-semibold text-white">
                   02
                 </span>
+
                 <div className="relative z-10 pt-1">
-                  <h3 className="text-2xl font-semibold text-slate-950">内容を入力する</h3>
-                  <p className="mt-3 text-base leading-8 text-slate-600">その月の活動内容と、子どもの様子を入力します。<br />短い文章でも大丈夫です。</p>
+                  <h3 className="text-2xl font-semibold text-slate-950">
+                    内容を入力する
+                  </h3>
+
+                  <p className="mt-3 text-base leading-8 text-slate-600">
+                    その月の活動内容と、子どもの様子を入力します。
+                    <br />
+                    短い文章でも大丈夫です。
+                  </p>
                 </div>
               </div>
-              <Image src="/howto-step02.png" alt="" width={180} height={180} className="pointer-events-none absolute bottom-0 right-10 h-auto w-[160px] object-contain" />
+
+              <Image
+                src="/howto-step02.png"
+                alt=""
+                width={180}
+                height={180}
+                className="pointer-events-none absolute bottom-0 right-10 h-auto w-[160px] object-contain"
+              />
             </div>
 
             {/* 03 */}
             <div className="relative flex min-h-[190px] items-center overflow-hidden rounded-[26px] border border-violet-100 bg-violet-50/70 px-8 py-7">
               <div className="flex items-start gap-7">
-                <span className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-violet-300 text-2xl font-semibold text-white">03</span>
+                <span className="relative z-10 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-violet-300 text-2xl font-semibold text-white">
+                  03
+                </span>
+
                 <div className="relative z-10 pt-1">
-                  <h3 className="text-2xl font-semibold text-slate-950">作りたい文章を選ぶ</h3>
-                  <p className="mt-3 text-base leading-8 text-slate-600">ねらいや評価・反省など、必要な項目を選ぶと、<br />入力内容に合わせた文章が作成されます。</p>
+                  <h3 className="text-2xl font-semibold text-slate-950">
+                    作りたい文章を選ぶ
+                  </h3>
+
+                  <p className="mt-3 text-base leading-8 text-slate-600">
+                    ねらいや評価・反省など、必要な項目を選ぶと、
+                    <br />
+                    入力内容に合わせた文章が作成されます。
+                  </p>
                 </div>
               </div>
-              <img src="/howto-step03-new.png" alt="" className="pointer-events-none absolute bottom-0 right-10 h-auto w-[160px] object-contain" />
+
+              <img
+                src="/howto-step03-new.png"
+                alt=""
+                className="pointer-events-none absolute bottom-0 right-10 h-auto w-[160px] object-contain"
+              />
             </div>
           </div>
 
           {/* スマホ・タブレット */}
           <div className="mt-10 space-y-5 lg:hidden">
             {[
-              { number: "01", title: "年齢と月を選ぶ", text: "クラスの年齢と、作成したい月を選択します。", box: "border-rose-100 bg-rose-50/70", numberColor: "bg-rose-200", image: "/howto-step01.png" },
-              { number: "02", title: "内容を入力する", text: "その月の活動内容と、子どもの様子を入力します。短い文章でも大丈夫です。", box: "border-emerald-100 bg-emerald-50/70", numberColor: "bg-emerald-300", image: "/howto-step02.png" },
-              { number: "03", title: "作りたい文章を選ぶ", text: "ねらいや評価・反省など、必要な項目を選ぶと、入力内容に合わせた文章が作成されます。", box: "border-violet-100 bg-violet-50/70", numberColor: "bg-violet-300", image: "/howto-step03-new.png" },
+              {
+                number: "01",
+                title: "年齢と月を選ぶ",
+                text: "クラスの年齢と、作成したい月を選択します。",
+                box: "border-rose-100 bg-rose-50/70",
+                numberColor: "bg-rose-200",
+                image: "/howto-step01.png",
+              },
+              {
+                number: "02",
+                title: "内容を入力する",
+                text: "その月の活動内容と、子どもの様子を入力します。短い文章でも大丈夫です。",
+                box: "border-emerald-100 bg-emerald-50/70",
+                numberColor: "bg-emerald-300",
+                image: "/howto-step02.png",
+              },
+              {
+                number: "03",
+                title: "作りたい文章を選ぶ",
+                text: "ねらいや評価・反省など、必要な項目を選ぶと、入力内容に合わせた文章が作成されます。",
+                box: "border-violet-100 bg-violet-50/70",
+                numberColor: "bg-violet-300",
+                image: "/howto-step03-new.png",
+              },
             ].map((step) => (
-              <div key={step.number} className={`relative min-h-[175px] overflow-hidden rounded-[24px] border px-5 py-5 sm:px-6 ${step.box}`}>
+              <div
+                key={step.number}
+                className={`relative min-h-[175px] overflow-hidden rounded-[24px] border px-5 py-5 sm:px-6 ${step.box}`}
+              >
                 <div className="flex items-start gap-4 pr-24 sm:pr-28">
-                  <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-semibold text-white ${step.numberColor}`}>{step.number}</span>
+                  <span
+                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-semibold text-white ${step.numberColor}`}
+                  >
+                    {step.number}
+                  </span>
+
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-950">{step.title}</h3>
-                    <p className="mt-3 text-[15px] leading-7 text-slate-600">{step.text}</p>
+                    <h3 className="text-xl font-semibold text-slate-950">
+                      {step.title}
+                    </h3>
+
+                    <p className="mt-3 text-[15px] leading-7 text-slate-600">
+                      {step.text}
+                    </p>
                   </div>
                 </div>
+
                 {step.number === "03" ? (
-                  <img src={step.image} alt="" className="pointer-events-none absolute bottom-0 right-3 h-auto w-[96px] object-contain sm:right-5 sm:w-[110px]" />
+                  <img
+                    src={step.image}
+                    alt=""
+                    className="pointer-events-none absolute bottom-0 right-3 h-auto w-[96px] object-contain sm:right-5 sm:w-[110px]"
+                  />
                 ) : (
-                  <Image src={step.image} alt="" width={120} height={120} className="pointer-events-none absolute bottom-0 right-3 h-auto w-[96px] object-contain sm:right-5 sm:w-[110px]" />
+                  <Image
+                    src={step.image}
+                    alt=""
+                    width={120}
+                    height={120}
+                    className="pointer-events-none absolute bottom-0 right-3 h-auto w-[96px] object-contain sm:right-5 sm:w-[110px]"
+                  />
                 )}
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
       {/* AI生成 */}
-      <section id="generator" className="border-b border-slate-200 bg-slate-100/70 py-20 sm:py-24">
+      <section
+        id="generator"
+        className="border-b border-slate-200 bg-slate-100/70 py-20 sm:py-24"
+      >
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <div className="mb-10 text-center">
             <h2 className="mt-3 text-2xl font-medium text-slate-950 sm:text-3xl">
