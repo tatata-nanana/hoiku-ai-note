@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { examples } from "./lib/examples";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.hoikuainote.com";
+  const baseUrl = "https://hoikuainote.com";
 
   const staticPages: MetadataRoute.Sitemap = [
     {
@@ -67,6 +67,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/column/ai-and-childcare`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/column/ai-cannot-see-child`,
       changeFrequency: "monthly",
       priority: 0.7,
     },
