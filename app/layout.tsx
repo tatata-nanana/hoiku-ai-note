@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.hoikuainote.com"),
+  metadataBase: new URL("https://hoikuainote.com"),
 
   title: {
     default:
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "保育AIノート｜保育士の月案・日誌・書類作成をAIでサポート",
     description:
       "保育AIノートは、保育士の月案や日誌などの書類作成をサポートするサービスです。年齢・月・活動内容・子どもの様子を入力すると、ねらい、評価・反省、養護、援助・配慮、環境構成など、必要な文章のたたき台をAIで作成できます。",
-    url: "https://www.hoikuainote.com",
+    url: "https://hoikuainote.com",
   },
 
   robots: {
